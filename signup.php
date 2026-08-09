@@ -1,7 +1,7 @@
 <?php
 
 include("config.php");
-
+echo $conn;
 $username = $_POST['username'];
 $phone = $_POST['phone'];
 $email = $_POST['email'];
@@ -11,7 +11,7 @@ $password = password_hash(
     PASSWORD_DEFAULT
 );
 
-$sql = "INSERT INTO users
+$sql = "INSERT INTO registration
 (username, phone, email, password)
 
 VALUES
