@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DabbaCartel - List Food</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="listfood.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="logo-section">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-bowl-food"></i>
+            </div>
+
+            <div class="logo-text">
+                <h2>DabbaCartel</h2>
+                <p>No food waste. Just goodness.</p>
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+        <nav class="sidebar-nav">
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#" class="nav-item active">
+                <i class="fa-solid fa-circle-plus"></i>
+                <span>List food</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-cube"></i>
+                <span>My Listings</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-box-open"></i>
+                <span>My Bookings</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-regular fa-comment"></i>
+                <span>Messages</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-regular fa-heart"></i>
+                <span>Favorites</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-chart-simple"></i>
+                <span>Impact</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-regular fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="#" class="nav-item logout">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="top-header">
+
+            <div class="header-left">
+
+                <button class="menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+                    <h1>List Food</h1>
+                    <p>Provide details about leftover food</p>
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <i class="fa-regular fa-bell notification"></i>
+
+                <div class="profile-circle">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= PAGE GRID ================= -->
+
+        <section class="page-grid">
+
+
+            <!-- ================= FOOD FORM ================= -->
+
+            <div class="food-details card">
+
+                <h2>Food Details</h2>
+
+
+                <!-- Food Name -->
+
+                <div class="form-group">
+
+                    <label for="foodName">
+                        Food Name/Type
+                    </label>
+
+                    <input
+                        type="text"
+                        id="foodName"
+                        placeholder="e.g. Veg Biryani">
+
+                </div>
+
+
+                <!-- Food Category -->
+
+                <div class="form-group">
+
+                    <label for="category">
+                        Food Category
+                    </label>
+
+                    <select id="category">
+
+                        <option value="">
+                            Select Category
+                        </option>
+
+                        <option>Main Course</option>
+                        <option>Rice</option>
+                        <option>Bread</option>
+                        <option>Snacks</option>
+                        <option>Dessert</option>
+                        <option>Fruits</option>
+                        <option>Vegetables</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Quantity + Expiry -->
+
+                <div class="two-column">
+
+                    <div class="form-group">
+
+                        <label for="quantity">
+                            Quantity
+                        </label>
+
+                        <select id="quantity">
+
+                            <option value="">
+                                Select Quantity
+                            </option>
+
+                            <option>5 People</option>
+                            <option>10 People</option>
+                            <option>15 People</option>
+                            <option>20 People</option>
+                            <option>25 People</option>
+                            <option>50 People</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="expiry">
+                            Expiry Time
+                        </label>
+
+                        <input
+                            type="time"
+                            id="expiry">
+
+                    </div>
+
+                </div>
+
+
+                <!-- Additional Notes -->
+
+                <div class="form-group">
+
+                    <label for="notes">
+                        Additional Notes
+                    </label>
+
+                    <textarea
+                        id="notes"
+                        placeholder="Any special instructions..."></textarea>
+
+                </div>
+
+
+                <!-- Upload -->
+
+                <div class="form-group upload-group">
+
+                    <label>
+                        Upload Food Photo
+                    </label>
+
+                    <div class="upload-box">
+
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                        <p>
+                            Click to upload food photo
+                        </p>
+
+                        <span>
+                            JPG, PNG or JPEG
+                        </span>
+
+                        <input
+                            type="file"
+                            id="foodImage"
+                            accept="image/*">
+
+                    </div>
+
+                </div>
+
+
+                <!-- Buttons -->
+
+                <div class="form-buttons">
+
+                    <button
+                        type="button"
+                        class="reset-btn"
+                        onclick="resetForm()">
+
+                        Reset
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="publish-btn"
+                        onclick="publishListing()">
+
+                        Publish Listing
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= RIGHT SIDE ================= -->
+
+            <div class="right-column">
+
+
+                <!-- Tips -->
+
+                <div class="tips-card card">
+
+                    <h2>
+                        <i class="fa-solid fa-check"></i>
+                        Tips for listing
+                    </h2>
+
+
+                    <div class="tip">
+
+                        <span class="check">
+                            ✓
+                        </span>
+
+                        <p>
+                            Provide accurate quantity and time
+                        </p>
+
+                    </div>
+
+
+                    <div class="tip">
+
+                        <span class="check">
+                            ✓
+                        </span>
+
+                        <p>
+                            Upload real food photo
+                        </p>
+
+                    </div>
+
+
+                    <div class="tip">
+
+                        <span class="check">
+                            ✓
+                        </span>
+
+                        <p>
+                            Mention pickup instructions
+                        </p>
+
+                    </div>
+
+
+                    <div class="tip">
+
+                        <span class="check">
+                            ✓
+                        </span>
+
+                        <p>
+                            Help food reach people faster
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Preview -->
+
+                <div class="preview-card card">
+
+                    <h2>Preview</h2>
+
+
+                    <div class="preview-image">
+
+                        <img
+                            id="previewImage"
+                            src="https://images.unsplash.com/photo-1563379091339-03246963d51a?auto=format&fit=crop&w=900&q=80"
+                            alt="Food Preview">
+
+                    </div>
+
+
+                    <div class="preview-content">
+
+                        <h3 id="previewName">
+                            Veg Biryani
+                        </h3>
+
+
+                        <div class="preview-row">
+
+                            <span>Category:</span>
+
+                            <strong id="previewCategory">
+                                Main Course
+                            </strong>
+
+                        </div>
+
+
+                        <div class="preview-row">
+
+                            <span>Quantity:</span>
+
+                            <strong id="previewQuantity">
+                                20 People
+                            </strong>
+
+                        </div>
+
+
+                        <div class="preview-row">
+
+                            <span>Pickup:</span>
+
+                            <strong>
+                                Panvel, Mumbai
+                            </strong>
+
+                        </div>
+
+
+                        <div class="preview-row">
+
+                            <span>Available till:</span>
+
+                            <strong id="previewExpiry">
+                                11:00 PM
+                            </strong>
+
+                        </div>
+
+
+                        <div class="ready">
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Ready to share
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        const foodName = document.getElementById("foodName");
+        const category = document.getElementById("category");
+        const quantity = document.getElementById("quantity");
+        const expiry = document.getElementById("expiry");
+        const foodImage = document.getElementById("foodImage");
+
+        const previewName = document.getElementById("previewName");
+        const previewCategory = document.getElementById("previewCategory");
+        const previewQuantity = document.getElementById("previewQuantity");
+        const previewExpiry = document.getElementById("previewExpiry");
+        const previewImage = document.getElementById("previewImage");
+
+
+        /* Food Name Preview */
+
+        foodName.addEventListener("input", function () {
+
+            if (this.value.trim() !== "") {
+
+                previewName.textContent = this.value;
+
+            } else {
+
+                previewName.textContent = "Veg Biryani";
+
+            }
+
+        });
+
+
+        /* Category Preview */
+
+        category.addEventListener("change", function () {
+
+            previewCategory.textContent =
+                this.value || "Main Course";
+
+        });
+
+
+        /* Quantity Preview */
+
+        quantity.addEventListener("change", function () {
+
+            previewQuantity.textContent =
+                this.value || "20 People";
+
+        });
+
+
+        /* Expiry Preview */
+
+        expiry.addEventListener("change", function () {
+
+            if (this.value) {
+
+                let [hours, minutes] =
+                    this.value.split(":");
+
+                hours = parseInt(hours);
+
+                let ampm = hours >= 12 ? "PM" : "AM";
+
+                hours = hours % 12;
+
+                hours = hours ? hours : 12;
+
+                previewExpiry.textContent =
+                    hours + ":" + minutes + " " + ampm;
+
+            }
+
+        });
+
+
+        /* Image Preview */
+
+        foodImage.addEventListener("change", function () {
+
+            const file = this.files[0];
+
+            if (file) {
+
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+
+                    previewImage.src = e.target.result;
+
+                };
+
+                reader.readAsDataURL(file);
+
+            }
+
+        });
+
+
+        /* Reset */
+
+        function resetForm() {
+
+            foodName.value = "";
+            category.value = "";
+            quantity.value = "";
+            expiry.value = "";
+
+            document.getElementById("notes").value = "";
+
+            previewName.textContent = "Veg Biryani";
+            previewCategory.textContent = "Main Course";
+            previewQuantity.textContent = "20 People";
+            previewExpiry.textContent = "11:00 PM";
+
+            previewImage.src =
+                "https://images.unsplash.com/photo-1563379091339-03246963d51a?auto=format&fit=crop&w=900&q=80";
+
+        }
+
+
+        /* Publish */
+
+        function publishListing() {
+
+            if (foodName.value === "") {
+
+                alert("Please enter food name.");
+
+                return;
+
+            }
+
+            if (category.value === "") {
+
+                alert("Please select food category.");
+
+                return;
+
+            }
+
+            if (quantity.value === "") {
+
+                alert("Please select quantity.");
+
+                return;
+
+            }
+
+            if (expiry.value === "") {
+
+                alert("Please select expiry time.");
+
+                return;
+
+            }
+
+            alert("Food listing published successfully!");
+
+        }
+
+    </script>
+
+</body>
+
+</html>
