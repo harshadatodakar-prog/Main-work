@@ -1,40 +1,10 @@
-
-
-
 <?php
-
-include("config.php");
-// Total food listings this month
-$sql = "SELECT COUNT(*) AS total
-        FROM food_listings
-        WHERE MONTH(created_at) = MONTH(CURRENT_DATE())
-        AND YEAR(created_at) = YEAR(CURRENT_DATE())";
-
-$result = mysqli_query($conn, $sql);
-
-$row = mysqli_fetch_assoc($result);
-
-$foodListings = $row['total'];
-
-
-// Successful donations this month
-$sql = "SELECT COUNT(*) AS total
-        FROM bookings
-        WHERE booking_status = 'Completed'
-        AND MONTH(booking_date) = MONTH(CURRENT_DATE())
-        AND YEAR(booking_date) = YEAR(CURRENT_DATE())";
-
-$result = mysqli_query($conn, $sql);
-
-$row = mysqli_fetch_assoc($result);
-
-$successfulDonations = $row['total'];
-
+session_start();
+if (!isset($_SESSION['user'])) {
+    header("Location: login.html"); // redirect back if not logged in
+    exit();
+}
 ?>
-
-
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -42,34 +12,34 @@ $successfulDonations = $row['total'];
 
     <title>DabbaCartel Dashboard</title>
 
-    <!-- Font Awesome Icons -->
+    
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- CSS -->
+    
     <link rel="stylesheet" href="dashboard.css">
 </head>
 
 <body>
 
-    <!-- ================= SIDEBAR ================= -->
 
     <aside class="sidebar">
 
         <div class="logo-section">
       <div class="logo-icon">
-    <img src="logo.png" alt="My logo">
+    <img src="d:\logo.jpeg" alt="My logo">
+     <br>
 
       </div>
 
             <div>
+                <br>
                 <h2>DabbaCartel</h2>
-                <p>No food waste. Just Goodness</p>
+                <p>Cartel of Kindness, One Dabba at a Time</p>
             </div>
         </div>
 
 
-        <!-- Navigation -->
 
         <nav class="sidebar-menu">
 
@@ -119,14 +89,11 @@ $successfulDonations = $row['total'];
     </aside>
 
 
-    <!-- ================= MAIN CONTENT ================= -->
 
-    <main class="main-content">
+ <main class="main-content">
 
 
-        <!-- ================= TOP BAR ================= -->
-
-        <header class="topbar">
+<header class="topbar">
 
             <div class="welcome-section">
 
@@ -168,9 +135,6 @@ $successfulDonations = $row['total'];
         </header>
 
 
-
-        <!-- ================= STAT CARDS ================= -->
-
         <section class="stats-container">
 
             <!-- Card 1 -->
@@ -182,14 +146,12 @@ $successfulDonations = $row['total'];
                 </div>
 
                 <div class="stat-info">
-                    <h2><?php echo $foodListings; ?></h2>
+                    <h2>00</h2>
                     <p>Food Listing This<br>Month</p>
                 </div>
 
             </div>
 
-
-            <!-- Card 2 -->
 
             <div class="stat-card">
 
@@ -198,14 +160,12 @@ $successfulDonations = $row['total'];
                 </div>
 
                 <div class="stat-info">
-                    <h2><?php echo $successfulDonations; ?></h2>65-*47\
+                    <h2>00</h2>
                     <p>Successful<br>Donations This Month</p>
                 </div>
 
             </div>
 
-
-            <!-- Card 3 -->
 
             <div class="stat-card">
 
@@ -219,9 +179,6 @@ $successfulDonations = $row['total'];
                 </div>
 
             </div>
-
-
-            <!-- Card 4 -->
 
             <div class="stat-card">
 
@@ -239,13 +196,7 @@ $successfulDonations = $row['total'];
         </section>
 
 
-
-        <!-- ================= DASHBOARD GRID ================= -->
-
         <section class="dashboard-grid">
-
-
-            <!-- ================= RECENT FOOD LISTINGS ================= -->
 
             <div class="dashboard-card recent-listings">
 
@@ -270,9 +221,6 @@ $successfulDonations = $row['total'];
 
             </div>
 
-
-
-            <!-- ================= NEARBY REQUESTS ================= -->
 
             <div class="dashboard-card nearby-requests">
 
@@ -327,9 +275,6 @@ $successfulDonations = $row['total'];
             </div>
 
 
-
-            <!-- ================= RECENT ACTIVITY ================= -->
-
             <div class="dashboard-card recent-activity">
 
                 <div class="card-header">
@@ -351,9 +296,6 @@ $successfulDonations = $row['total'];
 
             </div>
 
-
-
-            <!-- ================= QUICK ACTIONS ================= -->
 
             <div class="dashboard-card quick-actions">
 
@@ -415,9 +357,6 @@ $successfulDonations = $row['total'];
 
         </section>
 
-
-
-        <!-- ================= BOTTOM CTA ================= -->
 
         <section class="bottom-banner">
 
