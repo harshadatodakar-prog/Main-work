@@ -1,17 +1,16 @@
 <?php
 
-$conn=mysqli_connect(
-"localhost",
-"root",
-"",
-"user_module1"
-);
+$host = "localhost";
+$user = "root";
+$password = "Swami@2107";
+$database = "login_system";
 
-if(!$conn){
-die("Connection Failed");
+$conn = new mysqli($host, $user, $password, $database);
+
+if ($conn->connect_error) {
+    die("Database connection failed: " . $conn->connect_error);
 }
-else{
-    echo "conection successful";
-}
+
+echo "Database connected successfully!";
 
 ?>
